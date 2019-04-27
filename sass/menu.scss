@@ -1,0 +1,162 @@
+@import "../sass/variable";
+body {
+    background: $body-bg-color;
+    color: $white;
+}
+
+header#nav {
+    background: $header-nav-bg-color;
+    li.navSection li#liproduct,
+    li#lidevelopers,
+    li#licompany {
+        display: $display-inline-block;
+        font-size: $font-twenty;
+        width: $width-nav-li;
+        vertical-align: $vertical-align-top;
+        text-align: $text-center;
+        text-transform: $text-uppercase;
+        cursor: $cursorpointer;
+        padding: $padding-ten;
+        margin-right: $margin-right-fiv;
+    }
+    li.navSection.primary {
+        font-size: $font-fiften;
+        justify-content: $justify-content-left;
+    }
+    span.item-sub-title {
+        font-size: $font-fiften-ten;
+        color: #424770;
+    }
+    ul.depth-1 {
+        border-radius: 7px;
+        background: $subnav-bg-color;
+        width: $width-thitry-per;
+        position: $position-absolute;
+        top: $top-seventy;
+        display: $display-none;
+        margin: 0;
+        padding: 15px;
+        &:after {
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 20px solid white;
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 60px;
+        }
+        .menu-icons {
+            padding: 5px;
+            svg {
+                width: 10%;
+            }
+            button.item-products-link {
+                color: #6772e5;
+                background: none;
+                border: 0;
+                vertical-align: top;
+                width: 0;
+            }
+        }
+        .menu-icons:hover {
+            background: #f0f1f1;
+        }
+    }
+    #logo {
+        h1 {
+            a {
+                color: $white;
+            }
+        }
+    }
+    #menu {
+        margin-top: $margin-top-ten;
+        list-style: $list-style-none;
+    }
+}
+
+.navbar-toggle .icon-bar {
+    background: #fff;
+}
+
+p.popClose {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #logo {
+        width: 50%;
+        display: inline-block;
+        h1 {
+            margin-top: 5px;
+            a {
+                font-size: 25px;
+            }
+        }
+    }
+    .navbar-header {
+        display: inline-block;
+        float: right;
+    }
+    header#nav li#licompany,
+    header#nav li#lidevelopers,
+    header#nav li.navSection li#liproduct {
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+    }
+    ul.depth-1 {
+        display: block !important;
+        width: 100% !important;
+        position: inherit !important;
+    }
+    ul#menu {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        border-radius: 10px 10px 0 0;
+    }
+    header#nav ul.depth-1:after {
+        display: none;
+    }
+    header#nav span.item-sub-title {
+        display: none;
+    }
+    header#nav ul.depth-1 .menu-icons button.item-products-link {
+        width: auto;
+        vertical-align: super;
+    }
+    ul.depth-1 {
+        margin: 0;
+        padding: 0 5px;
+    }
+    header#nav li#licompany,
+    header#nav li#lidevelopers,
+    header#nav li.navSection li#liproduct {
+        color: #b4a5a5;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    header#nav ul.depth-1 {
+        padding: 0 5px;
+    }
+    .menu-icons {
+        cursor: pointer;
+    }
+    p.popClose {
+        color: #696a72;
+        text-align: center;
+        font-size: 20px;
+        padding: 10px;
+        width: 46px;
+        float: right;
+        margin: 0;
+        cursor: pointer;
+        display: block;
+    }
+    #menuWrapper {
+        display: none;
+    }
+}

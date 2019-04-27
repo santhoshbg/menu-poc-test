@@ -1,0 +1,594 @@
+@mixin vendor-prefix($name, $argument){
+  -webkit-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
+//Responsive Mobile media queries
+
+@mixin screen-mobile($orientation:false){
+  @if $orientation {
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max)
+    and (orientation:#{$orientation}) {
+      @content;
+    }
+  }
+  @else {
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+      @content;
+    }
+  }
+}
+
+//End Responsive Mobile media queries
+
+//Responsive Tablet media queries
+
+@mixin screen-tablet($orientation:false){
+  @if $orientation {
+    @media screen and (min-width: $tablet-min) and (max-width: $tablet-max)
+    and (orientation:#{$orientation}) {
+      @content;
+    }
+  }
+  @else {
+    @media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+      @content;
+    }
+  }
+}
+
+// End Responsive Tablet
+
+//Responsive Desktop Small 
+@mixin screen-sm-desktop($orientation:false){
+  @if $orientation {
+    @media screen and (min-width: $desktop-sm-min) and (max-width: $desktop-sm-max)
+    and (orientation: #{$orientation}){
+      @content;
+    }
+  }
+  @else {
+    @media screen and (min-width: $desktop-sm-min) and (max-width: $desktop-sm-max){
+      @content;
+    }
+  }
+}
+//End Responsive Desktop  Small
+
+//Responsive Desktop Medium 
+@mixin screen-med-desktop($orientation:false){
+  @if $orientation {
+    @media screen and (min-width: $desktop-med-min) and (max-width: $desktop-med-max)
+    and (orientation: #{$orientation}){
+      @content;
+    }
+  }
+  @else {
+    @media screen and (min-width: $desktop-med-min) and (max-width: $desktop-med-max){
+      @content;
+    }
+  }
+}
+//End Responsive Desktop  Medium
+
+//Responsive Desktop Large 
+@mixin screen-lg-desktop($orientation:false){
+  @if $orientation {
+    @media screen and (min-width: $desktop-lg-min) and (max-width: $desktop-lg-max)
+    and (orientation: #{$orientation}){
+      @content;
+    }
+  }
+  @else {
+    @media screen and (min-width: $desktop-lg-min) and (max-width: $desktop-lg-max){
+      @content;
+    }
+  }
+}
+//End Responsive Desktop  Large
+
+
+//Responsive Desktop X-Large 
+@mixin screen-xlg-desktop($orientation:false){
+  @if $orientation {
+    @media screen and (min-width: $desktop-xlg-min) and (max-width: $desktop-xlg-max)
+    and (orientation: #{$orientation}){
+      @content;
+    }
+  }
+  @else {
+    @media screen and (min-width: $desktop-xlg-min) and (max-width: $desktop-xlg-max){
+      @content;
+    }
+  }
+}
+//End Responsive Desktop X-Large
+
+//Responsive Custom 
+@mixin screen-custom($min, $max, $orientation:false){
+  @if $orientation {
+    @media screen and (min-width: $min) and (max-width: $max)
+    and (orientation: #{$orientation}){
+      @content;
+    }
+  }
+  @else {
+    @media screen and (min-width: $min) and (max-width: $max){
+      @content;
+    }
+  }
+}
+//End Responsive Desktop X-Large
+
+
+@mixin screen-mobile2($orientation:false){
+  @if $orientation {
+    @media screen and (min-width: 481px) and (max-width: 768px)
+    and (orientation:#{$orientation}) {
+      @content;
+    }
+  }
+  @else {
+    @media screen and (min-width: 481px) and (max-width: 768px) {
+      @content;
+    }
+  }
+}
+
+
+
+
+@mixin background-opacity($color, $opacity: 0.5) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}
+
+//End Responsive Mobile media queries
+
+
+@mixin text-justify($align: left){
+  text-align: justify;
+  text-align-last: $align;
+}
+
+@mixin flex($val){
+  -webkit-box-flex: $val;
+  -webkit-flex: $val;
+  -ms-flex: $val;
+  flex: $val;
+}
+
+@mixin flexbox(){
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin inline-flexbox(){
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+}
+
+@mixin flex-direction($direction) {
+
+  @include vendor-prefix(flex-direction, $direction);
+}
+
+@mixin flex-wrap($wrap) {
+
+  @include vendor-prefix(flex-wrap, $wrap);
+}
+
+@mixin justify-content($justify){
+  -webkit-justify-content: $justify;
+  -webkit-box-pack: $justify;
+  -moz-box-pack: $justify;
+  -moz-justify-content: $justify;
+  -ms-flex-pack: $justify;
+  justify-content: $justify;
+
+
+
+
+
+
+}
+
+@mixin align-items($align){
+  -webkit-box-align: $align;
+  -moz-box-align: $align;
+
+  -ms-flex-align: $align;
+  -webkit-align-items: $align;
+  align-items: $align;
+}
+
+@mixin align-self($align){
+  -webkit-box-align-self: $align;
+  -moz-box-align-self: $align;
+
+  -ms-flex-align-self: $align;
+  -webkit-align-self: $align;
+  align-self: $align;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// @mixin box-shadow($top, $left, $blur, $spread, $color, $inset:"") {
+//   -webkit-box-shadow:$top $left $blur $spread $color #{$inset};
+//   -moz-box-shadow:$top $left $blur $spread $color #{$inset};
+//   box-shadow:$top $left $blur $spread $color #{$inset};
+// }
+
+@mixin opacity($opacity: 0.5) {
+  -webkit-opacity:  $opacity;
+  -moz-opacity:     $opacity;
+  opacity:    $opacity;
+}
+
+@mixin transition ($transition) {
+  -webkit-transition: $transition;
+  -moz-transition:    $transition;
+  -ms-transition:     $transition;
+  -o-transition:      $transition;
+}
+
+// generic transform
+@mixin transform($transforms) {
+     -moz-transform: $transforms;
+       -o-transform: $transforms;
+      -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+          transform: $transforms;
+}
+// rotate
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+@mixin blur($blur){
+  -webkit-filter: blur($blur);
+  -moz-filter: blur($blur);
+  -ms-filter: blur($blur);
+  filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius=$blur);
+}
+
+// scale
+@mixin scale($scale) {
+   @include transform(scale($scale));
+   filter: none;
+  -webkit-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -ms-filter: blur(0px);
+  filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0');
+}
+// translate
+
+@mixin translate-rotate ($x, $y, $deg) {
+   @include transform(translate($x, $y) rotate($deg));
+}
+
+@mixin translate ($x, $y) {
+   @include transform(translate($x, $y));
+}
+
+@mixin translateY ($y) {
+   @include transform(translateY($y));
+}
+
+@mixin translateX ($x) {
+   @include transform(translateX($x));
+}
+
+@mixin translateZ ($z) {
+   @include transform(translateZ($z));
+}
+// skew
+@mixin skew ($x, $y) {
+   @include transform(skew(#{$x}deg, #{$y}deg));
+}
+//transform origin
+@mixin transform-origin ($origin) {
+    -moz-transform-origin: $origin;
+       -o-transform-origin: $origin;
+      -ms-transform-origin: $origin;
+  -webkit-transform-origin: $origin;
+          transform-origin: $origin;
+}
+
+$default-text-shadow-color: #aaaaaa;
+$default-text-shadow-h-offset: 0px;
+$default-text-shadow-v-offset: 0px;
+$default-text-shadow-blur: 1px;
+$default-text-shadow-spread: false;
+
+@mixin text-shadow($shadow...) {
+  $shadow: if(length($shadow) > 0, $shadow, default);
+  $default: -compass-space-list(compact($default-text-shadow-h-offset $default-text-shadow-v-offset $default-text-shadow-blur $default-text-shadow-spread $default-text-shadow-color));
+  $shadows-without-spread: join((), (), comma);
+  $shadows: join((), (), comma);
+  $has-spread: false;
+  @each $layer in $shadow {
+    $layer: if($layer == "default", $default, $layer);
+    @if length($layer) > 4 {
+      $has-spread: true;
+      $shadows-without-spread: append($shadows-without-spread, nth($layer, 1) nth($layer, 2) nth($layer, 3) nth($layer, 5));
+      $shadows: append($shadows, $layer);
+    }
+    @else {
+      $shadows-without-spread: append($shadows-without-spread, $layer);
+      $shadows: append($shadows, $layer);
+    }
+  }
+  @if $has-spread {
+    text-shadow: $shadows-without-spread;
+  }
+  text-shadow: $shadows;
+}
+
+
+
+
+@mixin text-placeholder($color){
+    &::-webkit-input-placeholder {
+    color:   $color;
+    }
+    &:-moz-placeholder {
+       color:    $color;
+       opacity:  1;
+    }
+    &::-moz-placeholder {
+       color:    $color;
+       opacity:  1;
+    }
+    &:-ms-input-placeholder {
+       color:   $color;
+    }
+}
+
+@mixin accelerate($transforms:"") {
+  @if $transforms{
+
+
+    @include transform($transforms translateZ(0));
+  }
+  @else{
+    @include vendor-prefix(transform, translateZ(0));
+    // transform: translateZ(0);
+  }
+
+  backface-visibility: hidden;
+  perspective: 1000;
+}
+
+@mixin animate-name($name){
+  -webkit-animation-name: $name;
+  -moz-animation-name: $name;
+   animation-name: $name;
+}
+
+@mixin animate-cubic($time){
+  @include vendor-prefix(transition, all cubic-bezier(.06,.76,.25,.96) #{$time});
+}
+
+@mixin animate-delay($time){
+  -webkit-animation-delay: $time; /* Chrome, Safari, Opera */
+  -moz-animation-delay: $time;
+  animation-delay: $time;
+}
+
+@mixin animate-state($state:running){
+  -webkit-animation-play-state: $state; /* Chrome, Safari, Opera */
+    animation-play-state: $state;
+}
+
+@mixin animate-fill($fill){
+  -webkit-animation-fill-mode: $fill;
+  -moz-animation-fill-mode: $fill;
+  animation-fill-mode: $fill;
+}
+
+@mixin animate-steps($timing){
+  -moz-animation-timing-function: steps($timing, end);
+  -webkit-animation-timing-function: steps($timing, end);
+  animation-timing-function: steps($timing, end);
+}
+
+@mixin animate-duration($time, $iteration:"" ){
+  -webkit-animation-duration: $time;
+  -moz-animation-duration: $time;
+  animation-duration: $time;
+
+
+
+  -webkit-animation-iteration-count: #{$iteration};
+    -moz-animation-iteration-count: #{$iteration};
+    animation-iteration-count: #{$iteration};
+
+
+}
+
+
+@mixin animation($animate...) {
+    $max: length($animate);
+    $animations: '';
+
+    @for $i from 1 through $max {
+        $animations: #{$animations + nth($animate, $i)};
+
+        @if $i < $max {
+            $animations: #{$animations + ", "};
+        }
+    }
+    -webkit-animation: $animations;
+    -moz-animation:    $animations;
+    -o-animation:      $animations;
+    animation:         $animations;
+}
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+
+@mixin vignette-overlay-black(){
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+27,000000+27,444444+100&0+26,0.81+100 */
+background: -moz-linear-gradient(top,  rgba(0,0,0,0) 26%, rgba(0,0,0,0.01) 27%, rgba(68,68,68,0.81) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 26%,rgba(0,0,0,0.01) 27%,rgba(68,68,68,0.81) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(0,0,0,0) 26%,rgba(0,0,0,0.01) 27%,rgba(68,68,68,0.81) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#cf444444',GradientType=0 ); /* IE6-9 */
+
+}
+
+
+@mixin theme-gradient(){
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5dc5c5+0,00a69c+100 */
+  background: $themeColor; /* Old browsers */
+  background: -moz-linear-gradient(top,  $themeColor-2 0%, $themeColor-3 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  $themeColor-2 0%,$themeColor-3 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  $themeColor-2 0%,$themeColor-3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$themeColor-2', endColorstr='$themeColor-3',GradientType=0 ); /* IE6-9 */
+
+
+
+}
+
+@mixin theme-gradient2(){
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8d1717+0,510d0d+100 */
+  background: #8d1717; /* Old browsers */
+  background: -moz-linear-gradient(top,  #8d1717 0%, #510d0d 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #8d1717 0%,#510d0d 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #8d1717 0%,#510d0d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d1717', endColorstr='#510d0d',GradientType=0 ); /* IE6-9 */
+
+}
+
+
+@mixin gold-bg(){
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fff49f+0,dab25e+100 */
+  background: #fff49f; /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  #fff49f 0%, #dab25e 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg,  #fff49f 0%,#dab25e 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg,  #fff49f 0%,#dab25e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff49f', endColorstr='#dab25e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+@mixin theme-gradient-opaque{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5dc5c5+0,00a69c+100 */
+    background: rgba(93,197,197, 0.8); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(93,197,197,0.8) 0%, rgba(0,166,156,0.8) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(93,197,197,0.8) 0%,rgba(0,166,156,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(93,197,197,0.8) 0%,rgba(0,166,156,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5dc5c5', endColorstr='#00a69c',GradientType=0 ); /* IE6-9 */
+
+}
+
+
+@mixin color-theme-gradient(){
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5dc5c5+0,00a69c+100 */
+  color: $themeColor; /* Old browsers */
+  color: -moz-linear-gradient(top,  $themeColor 0%, $themeColor-2 100%); /* FF3.6-15 */
+  color: -webkit-linear-gradient(top,  $themeColor 0%,$themeColor-2 100%); /* Chrome10-25,Safari5.1-6 */
+  color: linear-gradient(to bottom,  $themeColor 0%,$themeColor-2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+
+
+}
+
+@mixin color-theme-gradient-opaque{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5dc5c5+0,00a69c+100 */
+    color: rgba(93,197,197, 0.8); /* Old browsers */
+    color: -moz-linear-gradient(top,  rgba(93,197,197,0.8) 0%, rgba(0,166,156,0.8) 100%); /* FF3.6-15 */
+    color: -webkit-linear-gradient(top,  rgba(93,197,197,0.8) 0%,rgba(0,166,156,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+    color: linear-gradient(to bottom,  rgba(93,197,197,0.8) 0%,rgba(0,166,156,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+}
+
+@mixin theme-gradient-angled{
+  // background: rgb(203,163,58); /* Old browsers */
+  // background: -moz-linear-gradient(48deg,  rgb(203,163,58) 0%, rgb(255,232,104) 46%, rgb(248,205,66) 100%); /* FF3.6-15 */
+  // background: -webkit-linear-gradient(48deg,  rgb(203,163,58) 0%,rgb(255,232,104) 46%,rgb(248,205,66) 100%); /* Chrome10-25,Safari5.1-6 */
+  // background: linear-gradient(48deg,  rgb(203,163,58) 0%,rgb(255,232,104) 46%,rgb(248,205,66) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cba33a', endColorstr='#f8cd42',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cba33a+0,cba33a+33,ffe868+50,f8cd42+66,f8cd42+100 */
+  background: rgb(203,163,58); /* Old browsers */
+  background: -moz-linear-gradient(45deg,  rgb(203,163,58) 0%, rgb(203,163,58) 33%, rgb(255,232,104) 50%, rgb(248,205,66) 66%, rgb(248,205,66) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg,  rgb(203,163,58) 0%,rgb(203,163,58) 33%,rgb(255,232,104) 50%,rgb(248,205,66) 66%,rgb(248,205,66) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg,  rgb(203,163,58) 0%,rgb(203,163,58) 33%,rgb(255,232,104) 50%,rgb(248,205,66) 66%,rgb(248,205,66) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cba33a', endColorstr='#f8cd42',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+@mixin theme-gradient-text{
+  background: -webkit-linear-gradient(45deg, rgb(203,163,58) 0%,rgb(203,163,58) 43%,rgb(255,232,104) 50%,rgb(248,205,66) 58%,rgb(248,205,66) 100%); /* Chrome10-25,Safari5.1-6 */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: $themeColor;
+}
+
+
+@mixin ribbon-gradient{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#003720+0,003720+38,6cb84c+62,6cb84c+100 */
+  background: rgb(0,55,32); /* Old browsers */
+  background: -moz-linear-gradient(45deg,  rgb(0,55,32) 0%, rgb(0,55,32) 38%, rgb(108,184,76) 62%, rgb(108,184,76) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg,  rgb(0,55,32) 0%,rgb(0,55,32) 38%,rgb(108,184,76) 62%,rgb(108,184,76) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg,  rgb(0,55,32) 0%,rgb(0,55,32) 38%,rgb(108,184,76) 62%,rgb(108,184,76) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003720', endColorstr='#6cb84c',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+@mixin cta-direction-gradient{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#003720+0,6cb84c+100 */
+  background: rgb(0,55,32); /* Old browsers */
+  background: -moz-linear-gradient(45deg,  rgb(0,55,32) 0%, rgb(108,184,76) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg,  rgb(0,55,32) 0%,rgb(108,184,76) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg,  rgb(0,55,32) 0%,rgb(108,184,76) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003720', endColorstr='#6cb84c',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+@mixin silver-angled{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+2,ffffff+29,cdcdcd+50,ffffff+72,ffffff+100 */
+  background: rgb(255,255,255); /* Old browsers */
+  background: -moz-linear-gradient(45deg,  rgb(255,255,255) 2%, rgb(255,255,255) 29%, rgb(205,205,205) 50%, rgb(255,255,255) 72%, rgb(255,255,255) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg,  rgb(255,255,255) 2%,rgb(255,255,255) 29%,rgb(205,205,205) 50%,rgb(255,255,255) 72%,rgb(255,255,255) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg,  rgb(255,255,255) 2%,rgb(255,255,255) 29%,rgb(205,205,205) 50%,rgb(255,255,255) 72%,rgb(255,255,255) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+@mixin black-trans{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,e5e5e5+86&1+0,0+100 */
+  background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(229,229,229,0.14) 86%, rgba(229,229,229,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(229,229,229,0.14) 86%,rgba(229,229,229,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(229,229,229,0.14) 86%,rgba(229,229,229,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00e5e5e5',GradientType=0 ); /* IE6-9 */
+
+}

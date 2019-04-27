@@ -1,0 +1,13 @@
+//$icon-font-path: "../fonts/";
+// bower:scss
+//@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+@import "../varaibles/jquery-ui";
+@import "../varaibles/owl.carousel.min";
+@import "../varaibles/_bootstrap.scss";
+@import "variable";
+@import "font-awesome";
+@import "mixins";
+// @import "icon";
+// @import "general"; 
+@import "menu"
